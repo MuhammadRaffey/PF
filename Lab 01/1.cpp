@@ -1,5 +1,5 @@
 #include <iostream>
-#include <conio.h>
+// #include <conio.h>
 using namespace std;
 int main()
 {
@@ -16,6 +16,6 @@ int main()
         c++;       // 2 //3
 
     } while (c <= b);
-    cout << "Results are:  " << r;
+    cout << "Results are:  " << r<<endl;
     return 0;
 }
