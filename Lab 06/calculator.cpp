@@ -15,8 +15,9 @@ int main()
     cin >> a;
     cout << "Enter second number: ";
     cin >> b;
+jump:
     int choice;
-    cout << "Enter operation: (1) Addition, (2) Subtraction, (3) Multiplication, (4) Division: \t";
+    cout << "Enter operation:\n (1) Addition, (2) Subtraction, (3) Multiplication, (4) Division: \t";
     cin >> choice;
 
     if (choice == 1)
@@ -35,7 +36,7 @@ int main()
     {
         try
         {
-            int res = divide(a, b);
+            double res = divide(a, b);
             cout << "Division: " << res << endl;
         }
         catch (const invalid_argument &e)
@@ -46,8 +47,9 @@ int main()
     else
     {
         cout << "Invalid choice" << endl;
+        exit(0);
     }
-
+    goto jump;
     return 0;
 }
 
