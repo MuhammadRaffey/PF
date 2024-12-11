@@ -1,26 +1,32 @@
 #include <iostream>
 using namespace std;
-
-struct Marks
+struct Result
 {
-    int sub[5];
-
-    int totalMarks()
-    {
-        int total = 0;
-        for (int i = 0; i < 5; i++)
-        {
-            total += sub[i];
-        }
-        return total;
-    }
-    float avgMarks()
-    {
-        return totalMarks() / 5.0;
-    }
+    float per[5];
 };
+
+Result percentage(float sub[5])
+{
+    Result result;
+    for (int i = 0; i < 5; i++)
+    {
+        result.per[i] = (sub[i] / 100) * 100;
+    }
+    return result;
+}
 
 int main()
 {
+    float subjects[5] = {85, 90, 78, 92, 88};
+
+    Result percentages = percentage(subjects);
+
+    cout << "Percentages: ";
+    for (int i = 0; i < 5; i++)
+    {
+        cout << percentages.per[i] << " ";
+    }
+    cout << endl;
+
     return 0;
 }
